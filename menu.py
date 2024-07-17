@@ -17,6 +17,7 @@ menu = [
     {"name": "Coffee", "price": 2500},
     {"name": "Tea", "price": 2000},
     {"name": "Drinking water", "price": 1000},
+    {"name": "Fresh Juice", "price": 2000},
     {"name": "Soup", "price": 5000},
     {"name": "Chicken Wings", "price": 9000},
     {"name": "Fish and Chips", "price": 10000},
