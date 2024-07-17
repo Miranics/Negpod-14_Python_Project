@@ -18,7 +18,8 @@ menu = [
     {"name": "Smoothie", "price": 3500}
 ]
 
-def display_menu()
+def display_menu():
     print("Menu")
     for index, item in enumerate(menu, start=1):
         print(f"{index} {item['name']}: {item['price']} RWF")
+
