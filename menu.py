@@ -2,8 +2,9 @@
 
 menu = [
     {"name": "Margherita Pizza", "price": 12000},
-    {"name": "Pepperoni Pizza", "price": 12000}
-    {"name": "BBQ Chicken Pizza", "price": 12000}
+    {"name": "Pepperoni Pizza", "price": 12000},
+    {"name": "BBQ Chicken Pizza", "price": 12000},
+    {"name": "Hawaiian Pizza", "price": 12000},
     {"name": "Burger", "price": 6500},
     {"name": "Pasta", "price": 7000},
     {"name": "Salad", "price": 8500},
