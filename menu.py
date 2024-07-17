@@ -1,7 +1,7 @@
 # Menu Definition with more food options and set prices
 
 menu = [
-    {"name": "Pizza", "price": 12000},
+    {"name": "Margherita Pizza", "price": 12000},
     {"name": "BBQ Chicken Pizza", "price": 12000}
     {"name": "Burger", "price": 6500},
     {"name": "Pasta", "price": 7000},
