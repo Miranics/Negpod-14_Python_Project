@@ -1,4 +1,5 @@
 # Menu Definition with more food options and set prices
+
 menu = [
     {"name": "Pizza", "price": 12000},
     {"name": "Burger", "price": 6500},
@@ -17,6 +18,7 @@ menu = [
     {"name": "Smoothie", "price": 3500}
 ]
 
-# Print the menu to verify the definition
-for item in menu:
-    print(f"Item: {item['name']}, Price: {item['price']} RWF")
+def display_menu()
+    print("Menu")
+    for index, item in enumerate(menu, start=1):
+        print(f"{index} {item['name']}: {item['price']} RWF")
