@@ -22,10 +22,10 @@ def main():
         elif choice == '3':
             review_order(order)
         elif choice == '4':
-            print("----Thanks for choosing our Restaurant, pls visit again----")
+            print("----Thanks for choosing our Restaurant, visit again----")
             break
         else:
-            print("Invalid choice. Please enter a number from 1 to 15.")
+            print("Invalid choice. Please enter a number from 1 to 22.")
 
 if __name__ == "__main__":
     main()

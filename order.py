@@ -8,7 +8,7 @@ def place_order(order):
         choice = input("Enter the number of the item you'd like to order (1-5), or 'done' to finish: ")
         if choice.lower() == 'done':
             break
-        elif choice.isdigit() and 1 <= int(choice) <= 15:
+        elif choice.isdigit() and 1 <= int(choice) <= 22:
             index = int(choice) - 1
             order.append(menu[index]['name'])
             print(f"{menu[index]['name']} added to your order.")

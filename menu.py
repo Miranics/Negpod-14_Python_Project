@@ -30,3 +30,4 @@ def display_menu():
     for index, item in enumerate(menu, start=1):
         print(f"{index} {item['name']}: {item['price']} RWF")
 
+
