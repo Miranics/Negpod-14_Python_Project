@@ -3,7 +3,7 @@
 from order import place_order, review_order
 
 def main():
-    print("Welcome To N14 Restaurant")
+    print("Welcome To N14 Restaurant!")
     order = []
     while True:
         print()
