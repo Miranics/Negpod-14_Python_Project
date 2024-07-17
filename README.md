@@ -36,4 +36,4 @@ Select option 4 to exit the program.
 
 Additional Notes
 This is a basic example and can be extended to include functionalities like order quantity, removing items from the order, and implementing payment processing.
-Refer to the code comments for further details on how each function works.
+Do refer to the code comments for further details on how each function works.
