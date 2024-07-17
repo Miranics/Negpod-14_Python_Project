@@ -1,7 +1,7 @@
 Restaurant Menu Project
 
 
-This Python project simulates a simple restaurant menu using functions and loops.
+his Python project simulates a simple restaurant menu using functions and loops.
 
 
 Functionality
