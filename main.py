@@ -7,7 +7,6 @@ def main():
     print("-..--..Welcome To N14 Restaurant..--..-")
     order = []
     while True:
-        print()
         print("Main Menu:")
         print("1. View Menu")
         print("2. Place Order")
