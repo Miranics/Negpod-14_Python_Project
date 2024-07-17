@@ -1,4 +1,4 @@
-estaurant Menu Project
+Restaurant Menu Project
 
 
 This Python project simulates a simple restaurant menu using functions and loops.
