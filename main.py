@@ -4,7 +4,8 @@ from order import place_order, review_order
 
 def main():
     
-    print("-..--..Welcome To N14 Restaurant..--..-")
+    print("\n-----------------------------"
+          "\n..Welcome To N14 Restaurant..""\n-----------------------------")
     order = []
     while True:
         print("Main Menu:")
