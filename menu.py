@@ -1,4 +1,4 @@
-# Menu Definition with more food options and set prices
+# Menu Definition with food options and prices
 
 menu = [
     {"name": "Margherita Pizza", "price": 12000},
