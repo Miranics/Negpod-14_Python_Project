@@ -17,12 +17,12 @@ def place_order(order):
 
 def review_order(order):
     if not order:
-        print("Your order is empty.")
+        print("Empty Order, please make selections.")
     else:
         print("Your current order:")
         total = 0
         for item in order:
-            # Find the item index in the menu list
+            # Find the item index that is in the menu list
             item_index = next((index for index, menu_item in enumerate(menu) if menu_item['name'] == item), None)
             if item_index is not None:
                 print(f"- {item}: {menu[item_index]['price']} RWF")
