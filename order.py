@@ -1,32 +1,73 @@
 # order.py
+from db_config import get_db_connection
 
-from menu import menu, display_menu
 
 def place_order(order):
-    while True:
-        display_menu()
-        choice = input("Enter the number of the item you'd like to order (1-5), or 'done' to finish: ")
-        if choice.lower() == 'done':
-            break
-        elif choice.isdigit() and 1 <= int(choice) <= 22:
-            index = int(choice) - 1
-            order.append(menu[index]['name'])
-            print(f"{menu[index]['name']} added to your order.")
-        else:
-            print("Invalid choice. Please enter a number from 1 to 5 or 'done'.")
+    connection = get_db_connection()
+    cursor = connection.cursor()
+
+    item_id = int(input("Enter the menu item ID: "))
+    quantity = int(input("Enter the quantity: "))
+
+    cursor.execute("INSERT INTO orders (item_id, quantity) VALUES (%s, %s)", (item_id, quantity))
+    connection.commit()
+
+    cursor.close()
+    connection.close()
+
+    order.append((item_id, quantity))
+    print("Order placed successfully!")
+
 
 def review_order(order):
-    if not order:
-        print("Empty Order, please make selections.")
-    else:
-        print("Your current order:")
-        total = 0
-        for item in order:
-            # Find the item index that is in the menu list
-            item_index = next((index for index, menu_item in enumerate(menu) if menu_item['name'] == item), None)
-            if item_index is not None:
-                print(f"- {item}: {menu[item_index]['price']} RWF")
-                total += menu[item_index]['price']
-            else:
-                print(f"- {item}: Item not found in the menu.")
-        print(f"Total: {total} RWF")
+    connection = get_db_connection()
+    cursor = connection.cursor()
+
+    cursor.execute("SELECT o.id, m.name, o.quantity, m.price FROM orders o JOIN menu m ON o.item_id = m.id")
+    orders = cursor.fetchall()
+
+    print("\nYour Order:")
+    total = 0
+    for order in orders:
+        order_id, name, quantity, price = order
+        total_price = quantity * price
+        total += total_price
+        print(f"Order ID: {order_id}, Item: {name}, Quantity: {quantity}, Total Price: {total_price:.2f}")
+
+    print(f"\nTotal Amount Due: {total:.2f}")
+
+    cursor.close()
+    connection.close()
+
+
+def update_order(order):
+    review_order(order)
+    item_num = int(input("Enter the order ID to update quantity: "))
+    new_quantity = int(input("Enter the new quantity: "))
+
+    connection = get_db_connection()
+    cursor = connection.cursor()
+
+    cursor.execute("UPDATE orders SET quantity = %s WHERE id = %s", (new_quantity, item_num))
+    connection.commit()
+
+    cursor.close()
+    connection.close()
+
+    print("Order updated successfully!")
+
+
+def remove_from_order(order):
+    review_order(order)
+    item_num = int(input("Enter the order ID to remove: "))
+
+    connection = get_db_connection()
+    cursor = connection.cursor()
+
+    cursor.execute("DELETE FROM orders WHERE id = %s", (item_num,))
+    connection.commit()
+
+    cursor.close()
+    connection.close()
+
+    print("Order removed successfully!")

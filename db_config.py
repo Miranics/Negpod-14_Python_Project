@@ -7,7 +7,6 @@ def get_db_connection():
         host='your_host',
         user='your_user',
         password='your_password',
-        database='your_database'
+        database='restaurant'
     )
     return connection
-
