@@ -1,3 +1,4 @@
+#!/usr/bin/python3
 # main.py
 from order import place_order, review_order, update_order, remove_from_order
 from menu import display_menu
