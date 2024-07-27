@@ -50,3 +50,46 @@ def save_order_to_db(order):
     connection.close()
     print("Order has been saved to the database.")
 
+def update_order(order):
+    if not order:
+        print("No items in order to update.")
+        return
+
+    review_order(order)
+    try:
+        item_index = int(input("Enter the number of the item to update (0 to cancel): ")) - 1
+        if item_index == -1:
+            return
+        if item_index < 0 or item_index >= len(order):
+            print("Invalid item number. Please try again.")
+            return
+
+        new_quantity = int(input("Enter the new quantity: "))
+        if new_quantity < 1:
+            print("Quantity must be at least 1. Please try again.")
+            return
+
+        order[item_index]['quantity'] = new_quantity
+        order[item_index]['total_price'] = menu[order[item_index]['item_id'] - 1]['price'] * new_quantity
+        print("Order updated successfully.")
+    except ValueError:
+        print("Invalid input. Please enter a valid number.")
+
+def remove_order(order):
+    if not order:
+        print("No items in order to remove.")
+        return
+
+    review_order(order)
+    try:
+        item_index = int(input("Enter the number of the item to remove (0 to cancel): ")) - 1
+        if item_index == -1:
+            return
+        if item_index < 0 or item_index >= len(order):
+            print("Invalid item number. Please try again.")
+            return
+
+        order.pop(item_index)
+        print("Item removed from order.")
+    except ValueError:
+        print("Invalid input. Please enter a valid number.")
