@@ -7,7 +7,7 @@ def test_connection():
         connection = mysql.connector.connect(
             host='localhost',
             user='root',
-            password='miracity',  # Use the new password you set
+            password='miracity',
             database='restaurant'
         )
         if connection.is_connected():
