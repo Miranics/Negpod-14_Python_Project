@@ -5,10 +5,10 @@ import mysql.connector
 def test_connection():
     try:
         connection = mysql.connector.connect(
-            host='localhost',        # Use 'localhost' if MySQL is on the same machine
-            user='root',             # Default MySQL root user
-            password='',             # Default password for root user (usually empty by default)
-            database='restaurant'    # Ensure this matches your database name
+            host='localhost',
+            user='root',
+            password='miracity',  # Use the new password you set
+            database='restaurant'
         )
         if connection.is_connected():
             print("Connection to MySQL database was successful")
@@ -18,4 +18,5 @@ def test_connection():
 
 if __name__ == "__main__":
     test_connection()
+
 
