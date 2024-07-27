@@ -1,4 +1,4 @@
-Restaurant Menu Project
+Restaurant Menu/order Project
 
 
 This Python project simulates a simple restaurant menu using functions and loops.
@@ -14,8 +14,8 @@ Review Order: Displays the current order with item names, individual prices, and
 Main Menu: Provides a user interface for navigating different functionalities.
 Running the Project
 Prerequisites: Ensure you have Python installed on your system.
-Open in PyCharm: Open this project directory in PyCharm.
-Run the Script: Navigate to the script file (usually named main.py) and run it using the built-in Run button or keyboard shortcut.
+Open in PyCharm or VScode: Open this project directory in PyCharm or vscode.
+Run the Script: Navigate to the script file (named main.py) and run it using the built-in Run button or keyboard shortcut.
 How to Use
 The program starts with a welcome message and displays the main menu:
 
@@ -36,4 +36,4 @@ Select option 4 to exit the program.
 
 Additional Notes
 This is a basic example and can be extended to include functionalities like order quantity, removing items from the order, and implementing payment processing.
-Refer to the code comments for further details on how each function works.
+Do refer to the code comments for further details on how each function works.
