@@ -31,9 +31,12 @@ def review_order(order):
         print("No items in order.")
     else:
         print("Your order:")
+        total_order_price = 0
         for item in order:
             selected_item = menu[item['item_id'] - 1]
             print(f"{item['quantity']} x {selected_item['name']} - {item['total_price']} RWF")
+            total_order_price += item['total_price']
+        print(f"Total order price: {total_order_price} RWF")
 
 def save_order_to_db(order):
     connection = get_db_connection()
