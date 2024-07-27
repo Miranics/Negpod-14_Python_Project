@@ -5,8 +5,8 @@ import mysql.connector
 def get_db_connection():
     connection = mysql.connector.connect(
         host='your_host',
-        user='your_user',
-        password='your_password',
+        user='root',
+        password='root',
         database='restaurant'
     )
     return connection
