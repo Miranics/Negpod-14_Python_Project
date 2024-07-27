@@ -1,13 +1,12 @@
 #!/usr/bin/python3
-# db_config.py
-
 import mysql.connector
 
 def get_db_connection():
     connection = mysql.connector.connect(
-        host='your_host',
+        host='localhost',  # or the appropriate hostname
         user='root',
-        password='',
+        password='miracity',
         database='restaurant'
     )
     return connection
+
