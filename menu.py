@@ -1,5 +1,4 @@
 #!/usr/bin/python3
-# menu.py
 menu = [
     {"name": "Margherita Pizza", "price": 12000},
     {"name": "Pepperoni Pizza", "price": 12000},
@@ -26,6 +25,6 @@ menu = [
 ]
 
 def display_menu():
-    print("Menu:")
+    print("Menu")
     for index, item in enumerate(menu, start=1):
-        print(f"{index}. {item['name']}: {item['price']} RWF")
+        print(f"{index} {item['name']}: {item['price']} RWF")

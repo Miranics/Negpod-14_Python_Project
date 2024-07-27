@@ -1,11 +1,9 @@
 #!/usr/bin/python3
-# main.py
-from order import place_order, review_order, save_order_to_db, update_order, remove_order
+from order import place_order, review_order, update_order, remove_order, save_order_to_db
 
 def main():
     print("\n-----------------------------"
-          "\n..Welcome To N14 Restaurant.."
-          "\n-----------------------------")
+          "\n..Welcome To N14 Restaurant..""\n-----------------------------")
     order = []
     while True:
         print("Main Menu:")
