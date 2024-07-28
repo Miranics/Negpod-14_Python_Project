@@ -7,7 +7,7 @@ This Python project simulates a simple restaurant menu using functions and loops
 Functionality
 The project offers the following functionalities:
 
-Menu: Defines a list of dictionaries containing menu item names and prices.
+Menu: Defines a list of dictionaries that contain menu item names and prices.
 Display Menu: Prints the available menu items with their corresponding prices.
 
 place Order: Users can select items from the menu and add them to their order.
