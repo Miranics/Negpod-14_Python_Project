@@ -8,7 +8,7 @@ def main():
     language = input(" Welcome! Choose your language (english/french/kinyarwanda): ").strip().lower()
     lang = load_language(language)
 
-    # Short welcome message
+    print(f"\n{'-' * 30}\n{lang['welcome_message']}\n{'-' * 30}")
     print(f"\n{'-' * 30}\n{lang['short_welcome_message']}\n{'-' * 30}")
 
     order = []
