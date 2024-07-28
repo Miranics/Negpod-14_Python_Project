@@ -1,12 +1,12 @@
 {
-    "welcome_message": "Murakaza neza muri Restaurant N14",
+   "welcome_message": "Murakaza neza muri Restaurant N14",
     "main_menu": "Menu Nyamukuru",
     "view_menu": "Reba Menu",
-    "place_order": "Tanga Itegeko",
-    "review_order": "Sura Itegeko",
-    "update_order": "Hindura Itegeko",
-    "remove_order": "Kuraho Itegeko",
-    "save_order": "Bika Itegeko",
+    "place_order": "Kora order yawe",
+    "review_order": "Suzuma order yawe",
+    "update_order": "Hindura order yawe",
+    "remove_order": "Kuraho order yawe",
+    "save_order": "Emeza order yawe",
     "exit": "Sohoka",
     "enter_choice": "Injiza amahitamo yawe (1-7): ",
     "thanks_message": "Urakoze guhitamo Restaurant yacu, garuka vuba"
