@@ -2,8 +2,11 @@
 from order import place_order, review_order, update_order, remove_order, save_order_to_db
 
 def main():
-    print("\n-----------------------------"
-          "\n..Welcome To N14 Restaurant..""\n-----------------------------")
+    print("\n" + "=" * 60)
+    print(" Welcome to N14 Restaurant! ".center(60, "*"))
+    print("=" * 60)
+    print("\nWe are delighted to have you here. Enjoy our delicious menu!")
+    print("------------------------------------------------------------\n")
     order = []
     while True:
         print("Main Menu:")
