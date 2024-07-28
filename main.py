@@ -12,8 +12,8 @@ def main():
         print("3. Review Order")
         print("4. Update Order")
         print("5. Remove Order")
-        print("6. Save Order")
-        print("7. Exit")
+        print("6. Confirm and Save Order")
+        print("7. Exit Application")
         choice = input("Enter your choice (1-7): ")
 
         if choice == '1':
