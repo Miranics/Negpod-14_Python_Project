@@ -1,0 +1,14 @@
+{
+    "welcome_message": "Bienvenue au Restaurant N14",
+    "main_menu": "Menu Principal",
+    "view_menu": "Voir le Menu",
+    "place_order": "Passer une Commande",
+    "review_order": "Réviser la Commande",
+    "update_order": "Mettre à Jour la Commande",
+    "remove_order": "Supprimer la Commande",
+    "save_order": "Enregistrer la Commande",
+    "exit": "Sortie",
+    "enter_choice": "Entrez votre choix (1-7) : ",
+    "thanks_message": "Merci d'avoir choisi notre Restaurant, revenez bientôt"
+}
+

@@ -1,0 +1,14 @@
+{
+    "welcome_message": "Welcome to N14 Restaurant",
+    "main_menu": "Main Menu",
+    "view_menu": "View Menu",
+    "place_order": "Place Order",
+    "review_order": "Review Order",
+    "update_order": "Update Order",
+    "remove_order": "Remove Order",
+    "save_order": "Save Order",
+    "exit": "Exit",
+    "enter_choice": "Enter your choice (1-7): ",
+    "thanks_message": "Thanks for choosing our Restaurant, visit again"
+}
+
