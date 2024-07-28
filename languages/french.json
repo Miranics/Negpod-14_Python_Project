@@ -1,5 +1,6 @@
 {
     "welcome_message": "Bienvenue au Restaurant N14",
+    "short_welcome_message": "Parcourez notre Menu et savourez votre repas!",
     "main_menu": "Menu Principal",
     "view_menu": "Voir le Menu",
     "place_order": "Passer une Commande",
