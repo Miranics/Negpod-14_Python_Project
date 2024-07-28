@@ -5,7 +5,7 @@ from language_loader import load_language
 
 
 def main():
-    language = input("Choose your language (english/french/kinyarwanda): ").strip().lower()
+    language = input(" Welcome! Choose your language (english/french/kinyarwanda): ").strip().lower()
     lang = load_language(language)
 
     # Short welcome message
