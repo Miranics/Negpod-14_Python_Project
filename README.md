@@ -11,7 +11,7 @@ Menu: Defines a list of dictionaries that contain menu item names and prices.
 Display Menu: Prints the available menu items with their corresponding prices.
 
 Place Order: Users can pick items from the menu and add them to their order list.
-Review Order: Displays the current order details, including item names, prices, and the total amount. 
+Review Order: Displays the current order details, including item names, prices and the total amount. 
 Main Menu: Provides an interface for accessing various features. 
 Running the Project Prerequisites: Ensure Python is installed on your system. 
 Open in PyCharm or VSCode: Open the project directory in either PyCharm or VSCode. 
