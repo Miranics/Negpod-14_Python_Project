@@ -6,7 +6,7 @@ def main():
     print(" Welcome to N14 Restaurant! ".center(60, "*"))
     print("=" * 60)
     print("\nWe are delighted to have you here. Enjoy our delicious menu!")
-    print("------------------------------------------------------------\n")
+    print("------------------------------------------------------------")
     order = []
     while True:
         print("Main Menu:")
