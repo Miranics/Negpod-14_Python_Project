@@ -1,42 +1,44 @@
 #!/usr/bin/python3
 from order import place_order, review_order, update_order, remove_order, save_order_to_db
+from menu import display_menu
+from language_loader import load_language
+
 
 def main():
-    print("\n" + "=" * 60)
-    print(" Welcome to N14 Restaurant! ".center(60, "*"))
-    print("=" * 60)
-    print("\nWe are delighted to have you here. Enjoy our delicious menu!")
-    print("------------------------------------------------------------")
+    language = input("Choose your language (english/french/kinyarwanda): ").strip().lower()
+    lang = load_language(language)
+
+    print(f"\n{'-' * 30}\n..{lang['welcome_message']}..""\n{'-'*30}")
     order = []
     while True:
-        print("Main Menu:")
-        print("1. View Menu")
-        print("2. Place Order")
-        print("3. Review Order")
-        print("4. Update Order")
-        print("5. Remove Order")
-        print("6. Confirm and Save Order")
-        print("7. Exit Application")
-        choice = input("Enter your choice (1-7): ")
+        print(lang['main_menu'])
+        print(f"1. {lang['view_menu']}")
+        print(f"2. {lang['place_order']}")
+        print(f"3. {lang['review_order']}")
+        print(f"4. {lang['update_order']}")
+        print(f"5. {lang['remove_order']}")
+        print(f"6. {lang['save_order']}")
+        print(f"7. {lang['exit']}")
+        choice = input(lang['enter_choice'])
 
         if choice == '1':
-            from menu import display_menu
             display_menu()
         elif choice == '2':
-            place_order(order)
+            place_order(order, lang)
         elif choice == '3':
-            review_order(order)
+            review_order(order, lang)
         elif choice == '4':
-            update_order(order)
+            update_order(order, lang)
         elif choice == '5':
-            remove_order(order)
+            remove_order(order, lang)
         elif choice == '6':
-            save_order_to_db(order)
+            save_order_to_db(order, lang)
         elif choice == '7':
-            print("----Thanks for choosing our Restaurant, visit again----")
+            print(lang['thanks_message'])
             break
         else:
-            print("Invalid choice. Please enter a number from 1 to 7.")
+            print(lang['invalid_choice'])
+
 
 if __name__ == "__main__":
     main()

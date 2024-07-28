@@ -1,88 +1,84 @@
 #!/usr/bin/python3
+from menu import menu
 from db_config import get_db_connection
-from menu import display_menu, menu
 
-def place_order(order):
+def display_menu():
+    print("Menu")
+    for index, item in enumerate(menu, start=1):
+        print(f"{index} {item['name']}: {item['price']} RWF")
+
+def place_order(order, lang):
     display_menu()
     while True:
         try:
-            item_number = int(input("Enter the item number to order (or 0 to finish): "))
-            if item_number == 0:
+            item_id = int(input("Enter the item ID to order (0 to finish): "))
+            if item_id == 0:
                 break
-            if item_number < 1 or item_number > len(menu):
-                print("Invalid item number. Please try again.")
-                continue
             quantity = int(input("Enter the quantity: "))
-            item = menu[item_number - 1]
+            item = menu[item_id - 1]
+            total_price = item['price'] * quantity
             order.append({
-                "id": item_number,
-                "name": item["name"],
-                "price": item["price"],
-                "quantity": quantity
+                "id": item_id,
+                "name": item['name'],
+                "quantity": quantity,
+                "total_price": total_price
             })
             print(f"Added {quantity} x {item['name']} to your order.")
-        except ValueError:
-            print("Invalid input. Please enter a valid number.")
+        except (ValueError, IndexError):
+            print(lang['invalid_input'])
+    review_order(order, lang)
 
-def review_order(order):
-    if not order:
-        print("No items in your order.")
-        return
+def review_order(order, lang):
+    print("Your current order:")
     total = 0
-    print("\nYour Order:")
     for item in order:
-        print(f"{item['quantity']} x {item['name']} @ {item['price']} RWF each")
-        total += item['price'] * item['quantity']
-    print(f"Total: {total} RWF\n")
+        print(f"{item['name']} x{item['quantity']} = {item['total_price']} RWF")
+        total += item['total_price']
+    print(f"Total: {total} RWF")
 
-def update_order(order):
-    if not order:
-        print("No items in your order to update.")
-        return
-    review_order(order)
+def update_order(order, lang):
+    review_order(order, lang)
     try:
-        item_number = int(input("Enter the item number to update: "))
+        item_id = int(input("Enter the item ID to update: "))
         for item in order:
-            if item['id'] == item_number:
-                new_quantity = int(input(f"Enter the new quantity for {item['name']}: "))
+            if item['id'] == item_id:
+                new_quantity = int(input("Enter the new quantity: "))
                 item['quantity'] = new_quantity
-                print(f"Updated {item['name']} to {new_quantity} quantity.")
+                item['total_price'] = menu[item_id - 1]['price'] * new_quantity
+                print(f"Updated {item['name']} to {new_quantity} x {item['name']}.")
                 return
-        print("Item not found in your order.")
+        print(lang['item_not_found'])
     except ValueError:
-        print("Invalid input. Please enter a valid number.")
+        print(lang['invalid_input'])
 
-def remove_order(order):
-    if not order:
-        print("No items in your order to remove.")
-        return
-    review_order(order)
+def remove_order(order, lang):
+    review_order(order, lang)
     try:
-        item_number = int(input("Enter the item number to remove: "))
+        item_id = int(input("Enter the item ID to remove: "))
         for item in order:
-            if item['id'] == item_number:
+            if item['id'] == item_id:
                 order.remove(item)
                 print(f"Removed {item['name']} from your order.")
                 return
-        print("Item not found in your order.")
+        print(lang['item_not_found'])
     except ValueError:
-        print("Invalid input. Please enter a valid number.")
+        print(lang['invalid_input'])
 
-def save_order_to_db(order):
-    if not order:
-        print("No items in your order to save.")
-        return
-
+def save_order_to_db(order, lang):
     connection = get_db_connection()
     cursor = connection.cursor()
 
-    for item in order:
-        cursor.execute(
-            "INSERT INTO orders (item_id, quantity, total_price) VALUES (%s, %s, %s)",
-            (item['id'], item['quantity'], item['price'] * item['quantity'])
-        )
-
-    connection.commit()
-    cursor.close()
-    connection.close()
-    print("Order saved to database.")
+    try:
+        for item in order:
+            cursor.execute(
+                "INSERT INTO orders (item_id, quantity, total_price) VALUES (%s, %s, %s)",
+                (item['id'], item['quantity'], item['total_price'])
+            )
+        connection.commit()
+        print(lang['order_saved'])
+    except Exception as e:
+        connection.rollback()
+        print(f"{lang['save_error']}: {e}")
+    finally:
+        cursor.close()
+        connection.close()
