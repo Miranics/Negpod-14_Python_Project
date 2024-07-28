@@ -9,16 +9,13 @@ The project offers the following functionalities:
 
 Menu: Defines a list of dictionaries containing menu item names and prices.
 Display Menu: Prints the available menu items with their corresponding prices.
-Place Order: Allows users to choose items from the menu and add them to their order.
-Review Order: Displays the current order with item names, individual prices, and the total amount.
-Main Menu: Provides a user interface for navigating different functionalities.
-Running the Project
-Prerequisites: Ensure you have Python installed on your system.
-Open in PyCharm or VScode: Open this project directory in PyCharm or vscode.
-Run the Script: Navigate to the script file (named main.py) and run it using the built-in Run button or keyboard shortcut.
-How to Use
-The program starts with a welcome message and displays the main menu:
 
+place Order: Users can select items from the menu and add them to their order.
+Review Order: The current order is shown, including item names, individual prices, and the total amount. Main Menu: 
+This is the main interface for accessing various features. Running the Project Prerequisites: Make sure Python is installed on your system. 
+Open in PyCharm or VSCode: Open the project directory in either PyCharm or VSCode. 
+Run the Script: Locate the script file (main.py) and execute it using the built-in Run button or a keyboard shortcut. 
+How to Use: The program starts with a welcome message and displays the main menu.
 
 
 Main Menu:
