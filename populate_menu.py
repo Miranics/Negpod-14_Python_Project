@@ -31,8 +31,16 @@ def populate_menu():
     conn = get_db_connection()
     cursor = conn.cursor()
 
+    # Disable foreign key checks
+    cursor.execute("SET FOREIGN_KEY_CHECKS = 0")
+    conn.commit()
+
     # Clear the menu table using DELETE
     cursor.execute("DELETE FROM menu")
+    conn.commit()
+
+    # Re-enable foreign key checks
+    cursor.execute("SET FOREIGN_KEY_CHECKS = 1")
     conn.commit()
 
     # Insert menu items
