@@ -29,7 +29,11 @@ def place_order(order, lang):
             total_price = price[0] * quantity
             order.append((item_id, quantity, total_price))
             print(lang['order_added'])
-            break
+
+            # Check if the user wants to add another item
+            add_more = input(lang['add_more_items']).strip().lower()
+            if add_more != 'y':
+                break
         except ValueError:
             print(lang['invalid_input'])
 
