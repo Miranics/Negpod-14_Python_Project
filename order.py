@@ -63,6 +63,7 @@ def update_order(order, lang):
             return
     print(lang['item_not_found'])
 
+
 def remove_order(order, lang):
     item_id = input(lang['enter_item_id_to_remove'])
     for i, item in enumerate(order):
