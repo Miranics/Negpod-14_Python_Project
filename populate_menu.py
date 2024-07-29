@@ -31,8 +31,8 @@ def populate_menu():
     conn = get_db_connection()
     cursor = conn.cursor()
 
-    # Clear the menu table
-    cursor.execute("TRUNCATE TABLE menu")
+    # Clear the menu table using DELETE
+    cursor.execute("DELETE FROM menu")
     conn.commit()
 
     # Insert menu items
