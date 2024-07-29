@@ -1,17 +1,14 @@
-#!/usr/bin/python3
 import mysql.connector
 from db_config import get_db_connection
 
 def display_menu(lang):
     connection = get_db_connection()
     cursor = connection.cursor()
-
-    cursor.execute("SELECT * FROM menu")
-    menu_items = cursor.fetchall()
-
-    print("\n" + lang['menu_header'])
-    for item in menu_items:
-        print(f"{item[0]}. {item[1]} - {item[2]:.2f}")
-
+    cursor.execute("SELECT id, name, price FROM menu")
+    rows = cursor.fetchall()
     cursor.close()
     connection.close()
+
+    print(lang['menu'])
+    for row in rows:
+        print(f"{row[0]}. {row[1]} - ${row[2]:.2f}")

@@ -1,4 +1,3 @@
-#!/usr/bin/python3
 import mysql.connector
 from db_config import get_db_connection
 
@@ -53,25 +52,18 @@ def update_order(order, lang):
         print(lang['invalid_input'])
 
 def remove_order(order, lang):
-    while True:
-        try:
-            item_id = int(input(lang['enter_item_id_to_remove']))
-            found = False
-            for i, (id, qty) in enumerate(order):
-                if id == item_id:
-                    del order[i]
-                    found = True
-                    print(lang['order_removed'])
-                    break
-            if not found:
-                print(lang['item_not_found'])
-        except ValueError:
-            print(lang['invalid_input'])
-        more_items = input(lang['add_more_items'])
-        if more_items.lower() != 'y':
-            break
+    try:
+        item_id = int(input(lang['enter_item_id_to_remove']))
+        for i, (id, qty) in enumerate(order):
+            if id == item_id:
+                del order[i]
+                print(lang['order_removed'])
+                return
+        print(lang['item_not_found'])
+    except ValueError:
+        print(lang['invalid_input'])
 
-def save_order_to_db(order):
+def save_order_to_db(order, lang):
     connection = get_db_connection()
     cursor = connection.cursor()
     for item_id, quantity in order:
@@ -86,7 +78,7 @@ def save_order_to_db(order):
     connection.commit()
     cursor.close()
     connection.close()
-    print("Order saved.")
+    print(lang['order_saved'])
 
 def give_feedback(lang):
     name = input(lang['enter_name'])

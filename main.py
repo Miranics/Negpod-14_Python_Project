@@ -1,9 +1,7 @@
-#!/usr/bin/python3
 import json
 from language_loader import load_language
 from order import place_order, review_order, update_order, remove_order, save_order_to_db, give_feedback
 from menu import display_menu
-
 
 def main():
     print("-----------------------------")
@@ -46,7 +44,7 @@ def main():
         choice = input("Enter your choice (1-8): ")
 
         if choice == "1":
-            display_menu()
+            display_menu(lang)
         elif choice == "2":
             place_order(order, lang)
         elif choice == "3":
@@ -56,7 +54,7 @@ def main():
         elif choice == "5":
             remove_order(order, lang)
         elif choice == "6":
-            save_order_to_db(order)
+            save_order_to_db(order, lang)
         elif choice == "7":
             give_feedback(lang)
         elif choice == "8":
@@ -64,7 +62,6 @@ def main():
             break
         else:
             print(lang['invalid_choice'])
-
 
 if __name__ == "__main__":
     main()
