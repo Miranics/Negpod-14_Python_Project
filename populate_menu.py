@@ -1,7 +1,6 @@
 #!/usr/bin/env python3
-# populate_menu.py
-
 from db_config import get_db_connection
+
 
 def populate_menu():
     menu_items = [
@@ -29,20 +28,21 @@ def populate_menu():
         {"name": "Smoothie", "price": 3500}
     ]
 
-    connection = get_db_connection()
-    cursor = connection.cursor()
-    
+    conn = get_db_connection()
+    cursor = conn.cursor()
+
+    # Clear the menu table
+    cursor.execute("DELETE FROM menu")
+    conn.commit()
+
+    # Insert menu items
     for item in menu_items:
-        cursor.execute(
-            "INSERT INTO menu (name, price) VALUES (%s, %s)",
-            (item["name"], item["price"])
-        )
-    
-    connection.commit()
+        cursor.execute("INSERT INTO menu (name, price) VALUES (%s, %s)", (item['name'], item['price']))
+
+    conn.commit()
     cursor.close()
-    connection.close()
-    print("Menu items inserted successfully!")
+    conn.close()
+
 
 if __name__ == "__main__":
     populate_menu()
-
