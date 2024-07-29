@@ -54,7 +54,7 @@ def save_order_to_db(order, lang):
     print(lang['order_saved'])
 
 def update_order(order, lang):
-    item_id = int(input(lang['enter_item_id_to_update']))
+    item_id = input(lang['enter_item_id_to_update'])
     for i, item in enumerate(order):
         if item[0] == item_id:
             new_quantity = int(input(lang['enter_new_quantity']))
@@ -64,7 +64,7 @@ def update_order(order, lang):
     print(lang['item_not_found'])
 
 def remove_order(order, lang):
-    item_id = int(input(lang['enter_item_id_to_remove']))
+    item_id = input(lang['enter_item_id_to_remove'])
     for i, item in enumerate(order):
         if item[0] == item_id:
             order.pop(i)
