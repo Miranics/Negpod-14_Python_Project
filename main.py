@@ -1,5 +1,6 @@
 #!/usr/bin/python3
 from order import place_order, review_order, update_order, remove_order, save_order_to_db, give_feedback
+from menu import display_menu
 from language_loader import load_language
 
 
@@ -44,7 +45,6 @@ def main():
         choice = input("Enter your choice (1-8): ")
 
         if choice == '1':
-            from menu import display_menu
             display_menu(lang)
         elif choice == '2':
             place_order(order, lang)
