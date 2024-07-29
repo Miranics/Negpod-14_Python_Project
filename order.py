@@ -55,15 +55,31 @@ def save_order_to_db(order, lang):
     print(lang['order_saved'])
 
 def update_order(order, lang):
-    item_id = input(lang['enter_item_id_to_update'])
+    if not order:
+        print(lang['no_items_in_order'])
+        return
+
+    item_id = int(input(lang['enter_item_id_to_update']))
+    found = False
+
     for i, item in enumerate(order):
         if item[0] == item_id:
-            new_quantity = int(input(lang['enter_new_quantity']))
-            new_total_price = item[3] / item[2] * new_quantity
+            new_quantity = int(input(lang['enter_new_quantity']))  # Convert to int
+            if new_quantity <= 0:
+                print(lang['invalid_quantity'])
+                return
+
+            # Calculate new total price
+            item_price = item[3] / item[2]  # Current price per item
+            new_total_price = item_price * new_quantity
+
+            # Update order
             order[i] = (item_id, item[1], new_quantity, new_total_price)
-            print(lang['order_updated'])
-            return
-    print(lang['item_not_found'])
+            found = True
+            break
+
+    if not found:
+        print(lang['item_not_found'])
 
 def remove_order(order, lang):
     item_id = input(lang['enter_item_id_to_remove'])
