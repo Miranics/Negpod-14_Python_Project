@@ -1,29 +1,29 @@
 #!/usr/bin/python3
-from order import place_order, review_order, update_order, remove_order, save_order_to_db
-from menu import display_menu
+from order import place_order, review_order, update_order, remove_order, save_order_to_db, give_feedback
 from language_loader import load_language
 
-
 def main():
-    language = input(" Welcome! Choose your language (english/french/kinyarwanda): ").strip().lower()
-    lang = load_language(language)
+    lang = load_language()
 
-    print(f"\n{'-' * 30}\n{lang['welcome_message']}\n{'-' * 30}")
-    print(f"\n{'-' * 30}\n{lang['short_welcome_message']}\n{'-' * 30}")
-
+    print("\n-----------------------------")
+    print(lang['welcome_message_1'])
+    print(lang['welcome_message_2'])
+    print("-----------------------------")
     order = []
     while True:
         print(lang['main_menu'])
-        print(f"1. {lang['view_menu']}")
-        print(f"2. {lang['place_order']}")
-        print(f"3. {lang['review_order']}")
-        print(f"4. {lang['update_order']}")
-        print(f"5. {lang['remove_order']}")
-        print(f"6. {lang['save_order']}")
-        print(f"7. {lang['exit']}")
-        choice = input(lang['enter_choice'])
+        print(lang['view_menu'])
+        print(lang['place_order'])
+        print(lang['review_order'])
+        print(lang['update_order'])
+        print(lang['remove_order'])
+        print(lang['save_order'])
+        print(lang['give_feedback'])
+        print(lang['exit'])
+        choice = input("Enter your choice (1-8): ")
 
         if choice == '1':
+            from menu import display_menu
             display_menu()
         elif choice == '2':
             place_order(order, lang)
@@ -36,12 +36,12 @@ def main():
         elif choice == '6':
             save_order_to_db(order, lang)
         elif choice == '7':
-            print(lang['thanks_message'])
+            give_feedback(lang)
+        elif choice == '8':
+            print(lang['goodbye_message'])
             break
         else:
             print(lang['invalid_choice'])
 
-
 if __name__ == "__main__":
     main()
-

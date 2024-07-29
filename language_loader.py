@@ -1,3 +1,4 @@
+#!/usr/bin/python3
 import json
 
 def load_language(language):
