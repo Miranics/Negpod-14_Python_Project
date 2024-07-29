@@ -1,4 +1,4 @@
-#!/usr/bin/python3
+#!/usr/bin/env python3
 # populate_menu.py
 
 from db_config import get_db_connection
