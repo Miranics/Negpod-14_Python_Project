@@ -63,6 +63,7 @@ def update_order(order, lang):
     found = False
 
     for i, item in enumerate(order):
+        # Check if the item ID matches
         if item[0] == item_id:
             new_quantity = int(input(lang['enter_new_quantity']))  # Convert to int
             if new_quantity <= 0:
@@ -76,10 +77,12 @@ def update_order(order, lang):
             # Update order
             order[i] = (item_id, item[1], new_quantity, new_total_price)
             found = True
+            print(lang['update_successful'])
             break
 
     if not found:
         print(lang['item_not_found'])
+
 
 def remove_order(order, lang):
     item_id = input(lang['enter_item_id_to_remove'])
