@@ -11,8 +11,8 @@ def display_menu(lang):
     print("-----------------------------")
     print(lang['menu_title'])
     print("-----------------------------")
-    for item in items:
-        print(f"{item[0]}. {item[1]} - RWF {item[2]:.2f}")
+    for idx, item in enumerate(items, start=1):
+        print(f"{idx}. {item[1]} - RWF {item[2]:.2f}")
     cursor.close()
     connection.close()
     print("-----------------------------")
