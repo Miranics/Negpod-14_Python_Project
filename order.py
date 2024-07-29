@@ -35,9 +35,9 @@ def review_order(order, lang):
             name, price = item
             total_price = price * quantity
             total += total_price
-            print(f"{name} (x{quantity}): RWFotal_price:.2f}")
+            print(f"{name} (x{quantity}): ${total_price:.2f}")
 
-    print(f"Total: RWFotal:.2f}")
+    print(f"Total: ${total:.2f}")
 
 def update_order(order, lang):
     try:

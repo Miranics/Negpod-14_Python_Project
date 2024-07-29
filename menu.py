@@ -12,4 +12,4 @@ def display_menu(lang):
 
     print(lang['menu'])
     for row in rows:
-        print(f"{row[0]}. {row[1]} - RWF{row[2]:.2f}")
+        print(f"{row[0]}. {row[1]} - ${row[2]:.2f}")
