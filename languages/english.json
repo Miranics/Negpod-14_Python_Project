@@ -20,5 +20,6 @@
     "enter_item_id_to_update": "Enter the item ID to update:",
     "item_removed": "Item has been removed from the order.",
     "welcome_message": "Welcome to N14 Restaurant",
-    "welcome_message_2": "Enjoy your dining experience!"
+    "welcome_message_2": "Enjoy your dining experience!",
+    "enter_new_quantity": "Enter the new quantity:"
 }
