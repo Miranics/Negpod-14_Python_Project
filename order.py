@@ -3,6 +3,7 @@
 
 from db_config import get_db_connection
 from menu import display_menu
+from decimal import Decimal
 
 def place_order(order, lang):
     connection = get_db_connection()
@@ -16,7 +17,7 @@ def place_order(order, lang):
         if result:
             item_name, price = result
             total_price = price * int(quantity)
-            order.append((item_id, item_name, quantity, total_price))
+            order.append((item_id, item_name, int(quantity), total_price))
             print(f"{lang['item_added']} - RWF {total_price:.2f}")
         else:
             print(lang['invalid_item'])
@@ -71,13 +72,13 @@ def update_order(order, lang):
                 return
 
             # Calculate new total price
-            item_price = item[3] / item[2]  # Current price per item
+            item_price = Decimal(item[3]) / item[2]  # Current price per item
             new_total_price = item_price * new_quantity
 
             # Update order
             order[i] = (item_id, item[1], new_quantity, new_total_price)
             found = True
-            print(lang['update_successful'])
+            print(lang['order_updated'])
             break
 
     if not found:

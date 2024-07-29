@@ -4,6 +4,7 @@
 from language_loader import load_language
 from order import place_order, review_order, update_order, remove_order, save_order_to_db, give_feedback
 from menu import display_menu
+from db_config import get_db_connection
 
 
 def main():
