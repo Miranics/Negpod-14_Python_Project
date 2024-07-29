@@ -1,3 +1,4 @@
+#!/usr/bin/env python3
 import mysql.connector
 from db_config import get_db_connection
 
