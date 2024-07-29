@@ -39,6 +39,10 @@ def populate_menu():
     cursor.execute("DELETE FROM menu")
     conn.commit()
 
+    # Reset AUTO_INCREMENT value
+    cursor.execute("ALTER TABLE menu AUTO_INCREMENT = 1")
+    conn.commit()
+
     # Re-enable foreign key checks
     cursor.execute("SET FOREIGN_KEY_CHECKS = 1")
     conn.commit()
