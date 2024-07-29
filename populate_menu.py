@@ -32,7 +32,7 @@ def populate_menu():
     cursor = conn.cursor()
 
     # Clear the menu table
-    cursor.execute("DELETE FROM menu")
+    cursor.execute("TRUNCATE TABLE menu")
     conn.commit()
 
     # Insert menu items
