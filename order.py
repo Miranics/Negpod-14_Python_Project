@@ -11,11 +11,12 @@ def place_order(order, lang):
         display_menu(lang)
         item_id = input(lang['enter_item_id'])
         quantity = input(lang['enter_quantity'])
-        cursor.execute("SELECT price FROM menu WHERE id = %s", (item_id,))
-        price = cursor.fetchone()
-        if price:
-            total_price = price[0] * int(quantity)
-            order.append((item_id, quantity, total_price))
+        cursor.execute("SELECT name, price FROM menu WHERE id = %s", (item_id,))
+        result = cursor.fetchone()
+        if result:
+            item_name, price = result
+            total_price = price * int(quantity)
+            order.append((item_id, item_name, quantity, total_price))
             print(f"{lang['item_added']} - RWF {total_price:.2f}")
         else:
             print(lang['invalid_item'])
@@ -34,8 +35,8 @@ def review_order(order, lang):
     print("-----------------------------")
     total = 0
     for item in order:
-        total += item[2]
-        print(f"Item ID: {item[0]}, Quantity: {item[1]}, Total Price: RWF {item[2]:.2f}")
+        total += item[3]  # Total price
+        print(f"Item ID: {item[0]}, Name: {item[1]}, Quantity: {item[2]}, Total Price: RWF {item[3]:.2f}")
     print("-----------------------------")
     print(f"Total: RWF {total:.2f}")
     print("-----------------------------")
@@ -46,7 +47,7 @@ def save_order_to_db(order, lang):
     for item in order:
         cursor.execute(
             "INSERT INTO orders (item_id, quantity, total_price) VALUES (%s, %s, %s)",
-            (item[0], item[1], item[2])
+            (item[0], item[2], item[3])
         )
     connection.commit()
     cursor.close()
@@ -58,11 +59,11 @@ def update_order(order, lang):
     for i, item in enumerate(order):
         if item[0] == item_id:
             new_quantity = int(input(lang['enter_new_quantity']))
-            order[i] = (item_id, new_quantity, item[2] / item[1] * new_quantity)
+            new_total_price = item[3] / item[2] * new_quantity
+            order[i] = (item_id, item[1], new_quantity, new_total_price)
             print(lang['order_updated'])
             return
     print(lang['item_not_found'])
-
 
 def remove_order(order, lang):
     item_id = input(lang['enter_item_id_to_remove'])
