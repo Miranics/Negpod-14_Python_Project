@@ -38,9 +38,9 @@ def main():
         print("4. Update Order")
         print("5. Remove Order")
         print("6. Save Order")
-        print("7. Give Feedback")
-        print("8. Exit")
-        choice = input("Enter your choice (1-8): ")
+        print("7. Give Us Feedback")
+        print("8. Exit Application")
+        choice = input("Choose an Option (1-8): ")
 
         if choice == '1':
             display_menu(lang)
