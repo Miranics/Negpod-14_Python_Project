@@ -12,7 +12,7 @@ def main():
     print("Welcome to N14 Restaurant")
     print("-----------------------------")
     lang_choice = input(
-        "Select Language / Sélectionnez la langue / Hitamo Ururimi:\n1. English\n2. French\n3. Kinyarwanda\nSelect (1-3): ")
+        "Select Language / Sélectionnez la langue / Hitamo Ururimi:\n1. English\n2. French\n3. Kinyarwanda\nEnter your choice (1-3): ")
     if lang_choice == '1':
         lang = load_language('english')
     elif lang_choice == '2':
