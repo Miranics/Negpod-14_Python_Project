@@ -15,11 +15,23 @@
     "feedback_prompt": "Please enter your feedback:",
     "thank_you_feedback": "Thank you for your feedback!",
     "enter_your_name": "Enter your name:",
-    "enter_rating": "Rate Us (1-5):",
-    "order_updated": "Order updated successfully!",
+    "enter_rating": "Enter your rating (1-5):",
+    "order_updated": "Order has been updated successfully!",
     "enter_item_id_to_update": "Enter the item ID to update:",
     "item_removed": "Item has been removed from the order.",
     "welcome_message": "Welcome to N14 Restaurant",
     "welcome_message_2": "Enjoy your dining experience!",
-    "enter_new_quantity": "Enter the new quantity:"
+    "enter_new_quantity": "Enter the new quantity:",
+    "main_menu": "Main Menu:",
+    "main_menu_options": [
+        "1. View Menu",
+        "2. Place Order",
+        "3. Review Order",
+        "4. Update Order",
+        "5. Remove Order",
+        "6. Save Order",
+        "7. Give Feedback",
+        "8. Exit"
+    ],
+    "choose_option": "Enter your choice (1-8):"
 }

@@ -6,7 +6,6 @@ from order import place_order, review_order, update_order, remove_order, save_or
 from menu import display_menu
 from db_config import get_db_connection
 
-
 def main():
     print("-----------------------------")
     print("Welcome to N14 Restaurant")
@@ -31,16 +30,10 @@ def main():
     order = []
 
     while True:
-        print("Main Menu:")
-        print("1. View Menu")
-        print("2. Place Order")
-        print("3. Review Order")
-        print("4. Update Order")
-        print("5. Remove Order")
-        print("6. Save Order")
-        print("7. Give Us Feedback")
-        print("8. Exit Application")
-        choice = input("Choose an Option (1-8): ")
+        print(lang['main_menu'])
+        for option in lang['main_menu_options']:
+            print(option)
+        choice = input(lang['choose_option'])
 
         if choice == '1':
             display_menu(lang)
@@ -61,7 +54,6 @@ def main():
             break
         else:
             print(lang['invalid_choice'])
-
 
 if __name__ == "__main__":
     main()

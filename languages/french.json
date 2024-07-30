@@ -21,5 +21,17 @@
     "item_removed": "L'article a été retiré de la commande.",
     "welcome_message": "Bienvenue au restaurant N14",
     "welcome_message_2": "Profitez de votre expérience culinaire!",
-    "enter_new_quantity": "Entrez la nouvelle quantité:"
+    "enter_new_quantity": "Entrez la nouvelle quantité:",
+    "main_menu": "Menu Principal:",
+    "main_menu_options": [
+        "1. Voir le menu",
+        "2. Passer commande",
+        "3. Revoir la commande",
+        "4. Mettre à jour la commande",
+        "5. Supprimer la commande",
+        "6. Enregistrer la commande",
+        "7. Donner des commentaires",
+        "8. Quitter"
+    ],
+    "choose_option": "Choisissez une option (1-8):"
 }

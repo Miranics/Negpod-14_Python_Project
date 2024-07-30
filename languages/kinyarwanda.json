@@ -21,5 +21,17 @@
     "item_removed": "Ikintu cyakuwe mu itegeko.",
     "welcome_message": "Murakaza neza muri N14 Restaurant",
     "welcome_message_2": "Mwishimire uburambe bwo kurya!",
-    "enter_new_quantity": "Injiza umubare mushya:"
+    "enter_new_quantity": "Injiza umubare mushya:",
+    "main_menu": "Menu Nyamukuru:",
+    "main_menu_options": [
+        "1. Reba Menu",
+        "2. Tega Itegeko",
+        "3. Reba Itegeko",
+        "4. Hindura Itegeko",
+        "5. Kuraho Itegeko",
+        "6. Bika Itegeko",
+        "7. Tanga Ibyifuzo",
+        "8. Gusohoka"
+    ],
+    "choose_option": "Injiza amahitamo (1-8):"
 }
