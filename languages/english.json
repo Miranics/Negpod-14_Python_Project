@@ -30,8 +30,8 @@
         "4. Update Order",
         "5. Remove Order",
         "6. Save Order",
-        "7. Give Feedback",
-        "8. Exit"
+        "7. Give Us Feedback",
+        "8. Exit App"
     ],
     "choose_option": "Enter your choice (1-8):"
 }
