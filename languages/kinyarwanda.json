@@ -24,14 +24,14 @@
     "enter_new_quantity": "Injiza umubare mushya:",
     "main_menu": "Menu Nyamukuru:",
     "main_menu_options": [
-        "1. Reba Menu",
-        "2. Tega Itegeko",
-        "3. Reba Itegeko",
-        "4. Hindura Itegeko",
-        "5. Kuraho Itegeko",
-        "6. Bika Itegeko",
-        "7. Tanga Ibyifuzo",
-        "8. Gusohoka"
+        "1. Menu Nyamukuru",
+        "2. Reba Menu",
+        "3. Hitamo",
+        "4. Suzuma amahitamo",
+        "5. Hindura amahitamo",
+        "6. Kuraho ibyo wahisemo",
+        "7. Emeza ibyo wahisemo",
+        "8. Sohoka"
     ],
     "choose_option": "Injiza amahitamo (1-8):"
 }
