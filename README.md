@@ -23,8 +23,9 @@ Main Menu:
 1. View Menu
 2. Place Order
 3. Review Order
-4. Exit
-Enter your choice (1-4): 
+4. Exit   
+ 
+ Enter your choice (1-4): 
 Choose options based on the provided numbers (1-4).
 To view the menu, select option 1.
 To place an order, choose option 2. You can select items by entering their corresponding numbers from the displayed menu or type "done" to finish your order.
